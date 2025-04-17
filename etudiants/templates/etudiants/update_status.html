@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mettre à jour le statut d'inscription</title>
+</head>
+<body>
+    <h2>Mettre à jour le statut d'inscription de {{ etudiant.nom }} {{ etudiant.prenom }}</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="inscrit">Inscrit :</label>
+            <input type="checkbox" name="inscrit" {% if etudiant.inscrit %}checked{% endif %}>
+        </div>
+        <button type="submit" class="btn btn-primary">Mettre à jour</button>
+    </form>
+</body>
+</html>
