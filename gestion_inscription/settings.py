@@ -126,31 +126,3 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 LOGIN_REDIRECT_URL = '/dashboard/'  # ou autre vue protégée
 
 
-# deployement
-DEBUG = False
-
-import os
-
-SECRET_KEY = os.environ.get('SECRET_KEY', 'insecure-default')
-
-ALLOWED_HOSTS = ['gestion_inscription.onrender.com', 'localhost', '127.0.0.1']
-
-import dj_database_url
-
-DATABASES = {
-    'default': dj_database_url.config(default='sqlite:///db.sqlite3', conn_max_age=600)
-}
-
-MIDDLEWARE = [
-    'whitenoise.middleware.WhiteNoiseMiddleware',
-    # ... les autres middlewares
-]
-
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-# Ajoute cette ligne si nécessaire
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-
-
