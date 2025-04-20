@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: gestion_inscription-web
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn gestion_inscription.wsgi
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: gestion_inscription.settings
+      - key: SECRET_KEY
+        value: change_me_to_a_secret_key
+      - key: DEBUG
+        value: False
