@@ -25,7 +25,13 @@ SECRET_KEY = "django-insecure-a--%78p5#=tq+i(7twwqzzxa!$kp(+2j&)dq_ix2uc@ha&1&s=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+
+
+
+ALLOWED_HOSTS = ['gestion-inscription-isep.onrender.com', 'localhost', '127.0.0.1']
+
+
+
 
 
 # Application definition
